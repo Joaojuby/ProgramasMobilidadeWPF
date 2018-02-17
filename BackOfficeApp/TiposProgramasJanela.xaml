@@ -8,9 +8,9 @@
         Title="TiposProgramasJanela" Height="480" Width="640" Loaded="Window_Loaded">
     <DockPanel>
         <ToolBar DockPanel.Dock="Top">
-            <Button Content="Novo" />
-            <Button Content="Editar" />
-            <Button Content="Eliminar" />
+            <Button Name="btnNovo" Content="Novo" Click="btnNovo_Click" />
+            <Button Name="btnEditar" Content="Editar" Click="btnEditar_Click" />
+            <Button Name="btnEliminar" Content="Eliminar" Click="btnEliminar_Click" />
         </ToolBar>
         <Grid DockPanel.Dock="Left" >
             <Grid.ColumnDefinitions>

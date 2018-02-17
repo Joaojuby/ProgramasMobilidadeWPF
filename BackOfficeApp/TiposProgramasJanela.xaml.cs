@@ -48,5 +48,20 @@ namespace BackOfficeApp
         {
             AtualizarEstado();
         }
+
+        private void btnNovo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
