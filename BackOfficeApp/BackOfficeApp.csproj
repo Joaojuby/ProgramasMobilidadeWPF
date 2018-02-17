@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EditarPaisJanela.xaml.cs">
+      <DependentUpon>EditarPaisJanela.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paises.cs">
       <DependentUpon>ProgramasMobilidadeDataModel.tt</DependentUpon>
     </Compile>
@@ -74,6 +77,13 @@
     <Compile Include="TiposProgramaMobilidade.cs">
       <DependentUpon>ProgramasMobilidadeDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TiposProgramasJanela.xaml.cs">
+      <DependentUpon>TiposProgramasJanela.xaml</DependentUpon>
+    </Compile>
+    <Page Include="EditarPaisJanela.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +99,10 @@
     <Page Include="PaisesJanela.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TiposProgramasJanela.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

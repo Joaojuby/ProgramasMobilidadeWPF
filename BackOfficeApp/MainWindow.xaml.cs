@@ -33,10 +33,13 @@ namespace BackOfficeApp
         private void btnPaises_Click(object sender, RoutedEventArgs e)
         {
             PaisesJanela paisesJanela = new PaisesJanela();
-            if (paisesJanela.ShowDialog() == false)
-            {
-                Show();
-            }
+            paisesJanela.ShowDialog();
+        }
+
+        private void btnTiposProgramas_Click(object sender, RoutedEventArgs e)
+        {
+            TiposProgramasJanela tiposJanela = new TiposProgramasJanela();
+            tiposJanela.ShowDialog();
         }
     }
 }
