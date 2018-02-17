@@ -24,5 +24,19 @@ namespace BackOfficeApp
         {
             InitializeComponent();
         }
+
+        private void SairApp(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btnPaises_Click(object sender, RoutedEventArgs e)
+        {
+            PaisesJanela paisesJanela = new PaisesJanela();
+            if (paisesJanela.ShowDialog() == false)
+            {
+                Show();
+            }
+        }
     }
 }
