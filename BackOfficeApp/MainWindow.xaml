@@ -5,20 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BackOfficeApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="240" Width="240">
+        Title="Programas Mobilidade" Height="240" Width="240" 
+        Background="Lavender" >
+    <Window.Resources>
+        <Style TargetType="Button" >
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="25" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Verdana" />
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" Text="Por favor selecione a entidade a alterar" FontWeight="Bold" />
-        <Grid Grid.Row="1" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-            </Grid.ColumnDefinitions>
+        <TextBlock TextWrapping="Wrap" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" Text="Por favor selecione a entidade a alterar" FontWeight="Bold" />
+        <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
             <Button Name="btnPaises" Content="Países" Grid.Column="0" Click="btnPaises_Click"  />
             <Button Name="btnTiposProgramas" Content="Tipos de Programas" Grid.Column="1" Click="btnTiposProgramas_Click" />
-        </Grid>
+        </StackPanel>
     </Grid>
 </Window>

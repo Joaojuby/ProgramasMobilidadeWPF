@@ -1,4 +1,4 @@
-﻿<Window x:Class="BackOfficeApp.EditarPaisJanela"
+﻿<Window x:Class="BackOfficeApp.EditarTipoPrograma"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BackOfficeApp"
         mc:Ignorable="d"
         Background="Lavender"
-        Title="EditarPaisJanela" Height="210" Width="300" Closing="Window_Closing">
+        Title="EditarTipoPrograma" Height="180" Width="300" Closing="Window_Closing">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="Margin" Value="2" />
@@ -15,26 +15,23 @@
             <Setter Property="Margin" Value="2" />
         </Style>
     </Window.Resources>
-    <Grid Name="GridFormPais" >
+    <Grid Name="GridFormTipoPrograma">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        <Label Content="Nome" Grid.Row="0" Grid.Column="0" />
-        <Label Content="Código ISO" Grid.Row="1" Grid.Column="0" />
-        <Label Content="Código País" Grid.Row="2" Grid.Column="0" />
-        <Label Content="URL Bandeira" Grid.Row="3" Grid.Column="0" />
-        <TextBox Name="txtboxNome" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Nome}" />
-        <TextBox Name="txtboxCodigoISO" Grid.Row="1" Grid.Column="1" Text="{Binding Path=CodigoISO}" />
-        <TextBox Name="txtboxCodigoPais" Grid.Row="2" Grid.Column="1" Text="{Binding Path=CodigoPais}" />
-        <TextBox Name="txtboxURLBandeira" Grid.Row="3" Grid.Column="1" Text="{Binding Path=URLBandeira}" />
+        <Label Content="Designação" Grid.Row="0" Grid.Column="0" />
+        <Label Content="Descrição" Grid.Row="1" Grid.Column="0" />
+        <Label Content="URL Imagem" Grid.Row="2" Grid.Column="0" />
+        <TextBox Name="txtboxDesignacao" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Designacao}" />
+        <TextBox Name="txtboxDescricao" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Descricao}" />
+        <TextBox Name="txtboxURLImagem" Grid.Row="2" Grid.Column="1" Text="{Binding Path=URLImagem}" />
 
         <StackPanel Margin="0,10" Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
             <Button Margin="0,0,10,0" Name="btnGravar" Content="Gravar" IsDefault="True" Click="btnGravar_Click" />

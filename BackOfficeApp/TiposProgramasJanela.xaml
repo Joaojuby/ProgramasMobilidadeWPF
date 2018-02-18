@@ -5,12 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BackOfficeApp"
         mc:Ignorable="d"
-        Title="TiposProgramasJanela" Height="480" Width="640" Loaded="Window_Loaded">
+        Background="Lavender"
+        Closing="Window_Closing"
+        Title="Tipos de Programa" Height="350" Width="600" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="UltraBold" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,0,10,0" />
+        </Style>
+    </Window.Resources>
     <DockPanel>
+        <Menu DockPanel.Dock="Top" >
+            <MenuItem Header="Arquivo">
+                <MenuItem Header="Adicionar Tipo Programa" Click="btnNovo_Click" />
+                <MenuItem Header="Editar Tipo Programa" Click="btnEditar_Click" />
+                <MenuItem Header="Remover Tipo Programa" Click="btnEliminar_Click" />
+                <Separator />
+                <MenuItem Header="Fechar Janela" Click="menuFechar_Click" />
+            </MenuItem>
+        </Menu>
         <ToolBar DockPanel.Dock="Top">
-            <Button Name="btnNovo" Content="Novo" Click="btnNovo_Click" />
-            <Button Name="btnEditar" Content="Editar" Click="btnEditar_Click" />
-            <Button Name="btnEliminar" Content="Eliminar" Click="btnEliminar_Click" />
+            <Button Name="btnNovo" Click="btnNovo_Click">
+                <Image Source="Imagens\Add.png" Height="25" />
+            </Button>
+            <Button Name="btnEditar" Click="btnEditar_Click">
+                <Image Source="Imagens\Edit.png" Height="25" />
+            </Button>
+            <Button Name="btnEliminar" Click="btnEliminar_Click" >
+                <Image Source="Imagens\Remove.png" Height="25" />
+            </Button>
         </ToolBar>
         <Grid DockPanel.Dock="Left" >
             <Grid.ColumnDefinitions>
@@ -21,9 +48,10 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <ListBox Name="lbTiposProgramas" Grid.Column="1" SelectionChanged="lbTiposProgramas_SelectionChanged"/>
+            <ListBox Name="lbTiposProgramas" Grid.Column="1" SelectionChanged="lbTiposProgramas_SelectionChanged" />
             <Grid Name="Detalhes" Grid.Column="0" DataContext="{Binding ElementName=lbTiposProgramas, Path=SelectedItem}" >
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
@@ -32,17 +60,17 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Designação:" Grid.Row="0" Grid.Column="0" />
-                <Label Content="ID:" Grid.Row="1" Grid.Column="0" />
-                <Label Content="Descrição:" Grid.Row="2" Grid.Column="0" />
-                <Label Content="URL Imagem:" Grid.Row="3" Grid.Column="0" />
-                <TextBox Text="{Binding Path=Designacao}" Name="txtDesignacao" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
-                <TextBox Text="{Binding Path=ID}" Name="txtID" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
-                <TextBox Text="{Binding Path=Descricao}" Name="txtDescricao" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
-                <TextBox Text="{Binding Path=URLImagem}" Name="txtURLImagem" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBlock Text="Detalhes" Grid.Row="0" Grid.ColumnSpan="3" />
+                <Label Content="Designação:" Grid.Row="1" Grid.Column="0" />
+                <Label Content="ID:" Grid.Row="2" Grid.Column="0" />
+                <Label Content="Descrição:" Grid.Row="3" Grid.Column="0" />
+                <Label Content="URL Imagem:" Grid.Row="4" Grid.Column="0" />
+                <TextBox Text="{Binding Path=Designacao}" Name="txtDesignacao" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBox Text="{Binding Path=ID}" Name="txtID" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBox Text="{Binding Path=Descricao}" Name="txtDescricao" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBox Text="{Binding Path=URLImagem}" Name="txtURLImagem" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
             </Grid>
             <StatusBar Grid.Row="1" Grid.ColumnSpan="2">
                 <Label Name="lblEstado" Content="Estado" />

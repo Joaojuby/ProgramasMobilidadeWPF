@@ -5,13 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BackOfficeApp"
         mc:Ignorable="d"
-        Title="PaisesJanela" Height="480" Width="640" Loaded="Window_Loaded">
+        Closing="Window_Closing"
+        Title="Paises" Height="350" Width="480" Loaded="Window_Loaded"
+        Background="Lavender">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="UltraBold" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+    </Window.Resources>
     <DockPanel>
-            <ToolBar DockPanel.Dock="Top">
-                <Button Name="btnNovo" Content="Novo" Click="btnNovo_Click" />
-                <Button Name="btnEditar" Content="Editar" Click="btnEditar_Click" />
-                <Button Name="btnEliminar" Content="Eliminar" Click="btnEliminar_Click" />
-            </ToolBar>
+        <Menu DockPanel.Dock="Top" >
+            <MenuItem Header="Arquivo">
+                <MenuItem Header="Adicionar País" Click="btnNovo_Click" />
+                <MenuItem Header="Editar País" Click="btnEditar_Click" />
+                <MenuItem Header="Remover País" Click="btnEliminar_Click" />
+                <Separator />
+                <MenuItem Header="Fechar Janela" Click="menuFechar_Click" />
+            </MenuItem>
+        </Menu>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Name="btnNovo" Click="btnNovo_Click">
+                <Image Source="Imagens\Add.png" Height="25" />
+            </Button>
+            <Button Name="btnEditar" Click="btnEditar_Click">
+                <Image Source="Imagens\Edit.png" Height="25" />
+            </Button>
+            <Button Name="btnEliminar" Click="btnEliminar_Click" >
+                <Image Source="Imagens\Remove.png" Height="25" />
+            </Button>
+        </ToolBar>
         <Grid DockPanel.Dock="Left">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
@@ -29,22 +53,24 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Label Content="Nome:" Grid.Row="0" Grid.Column="0" />
-                <Label Content="ID:" Grid.Row="1" Grid.Column="0" />
-                <Label Content="Código ISO:" Grid.Row="2" Grid.Column="0" />
-                <Label Content="Código País:" Grid.Row="3" Grid.Column="0" />
-                <Label Content="URL Bandeira:" Grid.Row="4" Grid.Column="0" />
-                <TextBox Text="{Binding Path=Nome}" Name="txtNomePais" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
-                <TextBox Text="{Binding Path=ID}" Name="txtID" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
-                <TextBox Text="{Binding Path=CodigoISO}" Name="txtCodigoISO" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
-                <TextBox Text="{Binding Path=CodigoPais}" Name="txtCodigoPais" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
-                <TextBox Text="{Binding Path=URLBandeira}" Name="txtURLBandeira" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBlock Text="Detalhes" Grid.Row="0" Grid.ColumnSpan="3" />
+                <Label Content="Nome:" Grid.Row="1" Grid.Column="0" />
+                <Label Content="ID:" Grid.Row="2" Grid.Column="0" />
+                <Label Content="Código ISO:" Grid.Row="3" Grid.Column="0" />
+                <Label Content="Código País:" Grid.Row="4" Grid.Column="0" />
+                <Label Content="URL Bandeira:" Grid.Row="5" Grid.Column="0" />
+                <TextBox Text="{Binding Path=Nome}" Name="txtNomePais" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBox Text="{Binding Path=ID}" Name="txtID" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBox Text="{Binding Path=CodigoISO}" Name="txtCodigoISO" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBox Text="{Binding Path=CodigoPais}" Name="txtCodigoPais" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBox Text="{Binding Path=URLBandeira}" Name="txtURLBandeira" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" IsEnabled="False" />
             </Grid>
             <StatusBar Grid.Row="1" Grid.ColumnSpan="2">
                 <Label Name="lblEstado" Content="Estado" />

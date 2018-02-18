@@ -37,6 +37,8 @@ namespace BackOfficeApp
             lbPaises.DisplayMemberPath = "Nome";
             lbPaises.SelectedIndex = 0;
             lbPaises.IsSynchronizedWithCurrentItem = true;
+
+            AtualizarEstado();
         }
 
         private void lbPaises_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,6 +70,8 @@ namespace BackOfficeApp
 
                 _context.Entry(pais).State = EntityState.Modified;
                 _context.SaveChanges();
+
+                lbPaises.Items.Refresh();
 
                 AtualizarEstado();
             }
@@ -107,6 +111,16 @@ namespace BackOfficeApp
 
                 AtualizarEstado();
             }
+        }
+
+        private void menuFechar_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            DialogResult = true;
         }
     }
 }
