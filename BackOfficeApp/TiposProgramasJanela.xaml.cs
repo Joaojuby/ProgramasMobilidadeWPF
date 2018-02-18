@@ -20,13 +20,24 @@ namespace BackOfficeApp
     /// </summary>
     public partial class TiposProgramasJanela : Window
     {
+        /// <summary>
+        /// O contexto da base de dados
+        /// </summary>
         private ProgramasMobilidadeEntities _context = new ProgramasMobilidadeEntities();
 
+        /// <summary>
+        /// Inicializa uma nova instancia de <see cref="BackOfficeApp.TiposProgramasJanela" />. 
+        /// </summary>
         public TiposProgramasJanela()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Inicializa a listbox e atualiza a barra de estado
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _context.TiposProgramaMobilidade.Load();
@@ -39,21 +50,34 @@ namespace BackOfficeApp
 
         }
 
+        /// <summary>
+        /// Método para atualizar a barra de estado
+        /// </summary>
         private void AtualizarEstado()
         {
             lblEstado.Content = string.Format("Tipo Programa {0} de {1}", lbTiposProgramas.Items.CurrentPosition + 1, lbTiposProgramas.Items.Count);
         }
 
-        private void lbTiposProgramas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        /// <summary>
+        /// Atualiza a barra de estado ao selecionar um item na listbox
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
+        private void LbTiposProgramas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             AtualizarEstado();
         }
 
-        private void btnNovo_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Abre uma nova janela para criar um novo tipo de programa.
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
+        private void BtnNovo_Click(object sender, RoutedEventArgs e)
         {
             EditarTipoPrograma janela = new EditarTipoPrograma(_context.TiposProgramaMobilidade) { Title = "Novo Tipo Programa" };
 
-            if(janela.ShowDialog() == true)
+            if (janela.ShowDialog() == true)
             {
                 _context.TiposProgramaMobilidade.Add(janela.TipoPrograma);
                 _context.SaveChanges();
@@ -64,7 +88,12 @@ namespace BackOfficeApp
             }
         }
 
-        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Abre uma nova janela para editar o tipo de programa selecionado.
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
+        private void BtnEditar_Click(object sender, RoutedEventArgs e)
         {
             if (lbTiposProgramas.SelectedItem == null)
             {
@@ -88,7 +117,12 @@ namespace BackOfficeApp
             }
         }
 
-        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Elimina o tipo de programa selecionado após confirmação.
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             if (lbTiposProgramas.SelectedItem == null)
             {
@@ -109,11 +143,21 @@ namespace BackOfficeApp
             }
         }
 
-        private void menuFechar_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Fecha a janela atual
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
+        private void MenuFechar_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Altera o resultado da janela para true.
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             DialogResult = true;

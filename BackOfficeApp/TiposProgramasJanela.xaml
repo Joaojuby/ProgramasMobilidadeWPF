@@ -21,21 +21,21 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top" >
             <MenuItem Header="Arquivo">
-                <MenuItem Header="Adicionar Tipo Programa" Click="btnNovo_Click" />
-                <MenuItem Header="Editar Tipo Programa" Click="btnEditar_Click" />
-                <MenuItem Header="Remover Tipo Programa" Click="btnEliminar_Click" />
+                <MenuItem Header="Adicionar Tipo Programa" Click="BtnNovo_Click" />
+                <MenuItem Header="Editar Tipo Programa" Click="BtnEditar_Click" />
+                <MenuItem Header="Remover Tipo Programa" Click="BtnEliminar_Click" />
                 <Separator />
-                <MenuItem Header="Fechar Janela" Click="menuFechar_Click" />
+                <MenuItem Header="Fechar Janela" Click="MenuFechar_Click" />
             </MenuItem>
         </Menu>
         <ToolBar DockPanel.Dock="Top">
-            <Button Name="btnNovo" Click="btnNovo_Click">
+            <Button Name="btnNovo" Click="BtnNovo_Click">
                 <Image Source="Imagens\Add.png" Height="25" />
             </Button>
-            <Button Name="btnEditar" Click="btnEditar_Click">
+            <Button Name="btnEditar" Click="BtnEditar_Click">
                 <Image Source="Imagens\Edit.png" Height="25" />
             </Button>
-            <Button Name="btnEliminar" Click="btnEliminar_Click" >
+            <Button Name="btnEliminar" Click="BtnEliminar_Click" >
                 <Image Source="Imagens\Remove.png" Height="25" />
             </Button>
         </ToolBar>
@@ -48,7 +48,7 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <ListBox Name="lbTiposProgramas" Grid.Column="1" SelectionChanged="lbTiposProgramas_SelectionChanged" />
+            <ListBox Name="lbTiposProgramas" Grid.Column="1" SelectionChanged="LbTiposProgramas_SelectionChanged" />
             <Grid Name="Detalhes" Grid.Column="0" DataContext="{Binding ElementName=lbTiposProgramas, Path=SelectedItem}" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />

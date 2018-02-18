@@ -34,8 +34,8 @@
         <TextBox Name="txtboxURLImagem" Grid.Row="2" Grid.Column="1" Text="{Binding Path=URLImagem}" />
 
         <StackPanel Margin="0,10" Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <Button Margin="0,0,10,0" Name="btnGravar" Content="Gravar" IsDefault="True" Click="btnGravar_Click" />
-            <Button Name="btnCancelar" Content="Cancelar" IsCancel="True" Click="btnCancelar_Click" />
+            <Button Margin="0,0,10,0" Name="btnGravar" Content="Gravar" IsDefault="True" Click="BtnGravar_Click" />
+            <Button Name="btnCancelar" Content="Cancelar" IsCancel="True" Click="BtnCancelar_Click" />
         </StackPanel>
     </Grid>
 </Window>

@@ -23,8 +23,8 @@
         </Grid.RowDefinitions>
         <TextBlock TextWrapping="Wrap" Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" Text="Por favor selecione a entidade a alterar" FontWeight="Bold" />
         <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
-            <Button Name="btnPaises" Content="Países" Grid.Column="0" Click="btnPaises_Click"  />
-            <Button Name="btnTiposProgramas" Content="Tipos de Programas" Grid.Column="1" Click="btnTiposProgramas_Click" />
+            <Button Name="btnPaises" Content="Países" Grid.Column="0" Click="BtnPaises_Click"  />
+            <Button Name="btnTiposProgramas" Content="Tipos de Programas" Grid.Column="1" Click="BtnTiposProgramas_Click" />
         </StackPanel>
     </Grid>
 </Window>

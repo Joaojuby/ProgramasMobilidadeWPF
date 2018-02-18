@@ -18,21 +18,21 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top" >
             <MenuItem Header="Arquivo">
-                <MenuItem Header="Adicionar País" Click="btnNovo_Click" />
-                <MenuItem Header="Editar País" Click="btnEditar_Click" />
-                <MenuItem Header="Remover País" Click="btnEliminar_Click" />
+                <MenuItem Header="Adicionar País" Click="BtnNovo_Click" />
+                <MenuItem Header="Editar País" Click="BtnEditar_Click" />
+                <MenuItem Header="Remover País" Click="BtnEliminar_Click" />
                 <Separator />
-                <MenuItem Header="Fechar Janela" Click="menuFechar_Click" />
+                <MenuItem Header="Fechar Janela" Click="MenuFechar_Click" />
             </MenuItem>
         </Menu>
         <ToolBar DockPanel.Dock="Top">
-            <Button Name="btnNovo" Click="btnNovo_Click">
+            <Button Name="btnNovo" Click="BtnNovo_Click">
                 <Image Source="Imagens\Add.png" Height="25" />
             </Button>
-            <Button Name="btnEditar" Click="btnEditar_Click">
+            <Button Name="btnEditar" Click="BtnEditar_Click">
                 <Image Source="Imagens\Edit.png" Height="25" />
             </Button>
-            <Button Name="btnEliminar" Click="btnEliminar_Click" >
+            <Button Name="btnEliminar" Click="BtnEliminar_Click" >
                 <Image Source="Imagens\Remove.png" Height="25" />
             </Button>
         </ToolBar>
@@ -45,7 +45,7 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <ListBox Name="lbPaises" Grid.Column="1" SelectionChanged="lbPaises_SelectionChanged" />
+            <ListBox Name="lbPaises" Grid.Column="1" SelectionChanged="LbPaises_SelectionChanged" />
             <Grid Name="Detalhes" Grid.Column="0" DataContext="{Binding ElementName=lbPaises, Path=SelectedItem}" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />

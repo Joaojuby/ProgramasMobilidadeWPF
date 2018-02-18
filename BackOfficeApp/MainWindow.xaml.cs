@@ -20,17 +20,31 @@ namespace BackOfficeApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Inicializa uma nova instancia de <see cref="BackOfficeApp.MainWindow" />. 
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Termina o processo da aplicação
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
         private void SairApp(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void btnPaises_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Abre a janela dos países e esconde esta janela até fecharmos a anterior
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
+        /// <remarks></remarks>
+        private void BtnPaises_Click(object sender, RoutedEventArgs e)
         {
             PaisesJanela paisesJanela = new PaisesJanela();
             Hide();
@@ -40,7 +54,13 @@ namespace BackOfficeApp
             }
         }
 
-        private void btnTiposProgramas_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Abre a janela dos tipos de programas e esconde esta janela até fecharmos a anterior
+        /// </summary>
+        /// <param name="sender">A fonte do evento.</param>
+        /// <param name="e">Um <see cref="System.Windows.RoutedEventArgs" /> que contém a informação do evento.</param>
+        /// <remarks></remarks>
+        private void BtnTiposProgramas_Click(object sender, RoutedEventArgs e)
         {
             TiposProgramasJanela tiposJanela = new TiposProgramasJanela();
             Hide();
